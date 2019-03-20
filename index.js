@@ -147,11 +147,3 @@ function handleErrors(label, message, {system, input, errors}) {
   }
   return {system, input, errors};
 }
-
-const t = TimeCrunch.define(time);
-setInterval(() => {
-  t.tick();
-  const {time} = t;
-  if (time.day > 0) return;
-  console.log(time);
-}, 10);
