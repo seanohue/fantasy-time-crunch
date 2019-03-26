@@ -5,6 +5,12 @@ describe('TimeCrunch', () => {
     const timecrunch = new TimeCrunch(getExampleTime());
     expect(timecrunch).to.be.an('object');
   });
+
+  describe('validation', () => {
+    it('should error on missing config', () => {
+      expect(() => new TimeCrunch()).to.throw;
+    });
+  })
 });
 
 const getExampleTime = () => ({
