@@ -4,7 +4,7 @@
   "description": "A way of handling time and time-related state changes in a highly customizable way, for use with games and virtual worlds",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha spec"
   },
   "repository": {
     "type": "git",
