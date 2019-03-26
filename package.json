@@ -24,6 +24,8 @@
   },
   "homepage": "https://github.com/seanohue/fantasy-time-crunch#readme",
   "dependencies": {
-    "lodash": "^4.17.11"
+    "chai": "^4.2.0",
+    "lodash": "^4.17.11",
+    "mocha": "^6.0.2"
   }
 }
