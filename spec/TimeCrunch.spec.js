@@ -10,7 +10,19 @@ describe('TimeCrunch', () => {
     it('should error on missing config', () => {
       expect(() => new TimeCrunch()).to.throw;
     });
-  })
+  });
+
+  describe('#tick', () => {
+    it('should increment tickUnit', () => {
+      const timecrunch = new TimeCrunch(getExampleTime());
+      expect(timecrunch.tick).to.be.a('function');
+      console.log(timecrunch);
+      timecrunch.tick();
+      expect(timecrunch.time.second).to.equal(1);
+      timecrunch.tick();
+      expect(timecrunch.time.second).to.equal(2);
+    });
+  });
 });
 
 const getExampleTime = () => ({
