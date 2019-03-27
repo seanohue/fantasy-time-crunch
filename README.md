@@ -52,7 +52,7 @@ const time = {
     },
     onIncrement() {
       const names = 'MTWHFSU';
-      console.log('Day:', names[this.time.day]);
+      console.log('Day:', names[this.time.day - 1]);
     },
   },
   month: {
