@@ -1,0 +1,9 @@
+package.json
+package-lock.json
+index.html
+README.md
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md
+
+*.svg
+*.lock
