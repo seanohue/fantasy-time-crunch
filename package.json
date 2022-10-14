@@ -4,7 +4,8 @@
   "description": "A way of handling time and time-related state changes in a highly customizable way, for use with games and virtual worlds",
   "main": "index.js",
   "scripts": {
-    "test": "mocha spec"
+    "test": "nyc --reporter=html --reporter=text mocha spec",
+    "test:watch": "mocha spec -w"
   },
   "repository": {
     "type": "git",
@@ -29,5 +30,8 @@
     "mocha": "^8.1.3",
     "sinon": "^7.3.0",
     "sinon-chai": "^3.3.0"
+  },
+  "devDependencies": {
+    "nyc": "^15.1.0"
   }
 }
