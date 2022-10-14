@@ -1,9 +1,9 @@
-const TimeCrunch = require("../lib/TimeCrunch");
-const chai = require("chai");
+const TimeCrunch = require('../lib/TimeCrunch');
+const chai = require('chai');
 const { expect } = chai;
-const sinon = require("sinon");
-const sinonChai = require("sinon-chai");
-const getExampleTime = require("./_test-helpers");
+const sinon = require('sinon');
+const sinonChai = require('sinon-chai');
+const getExampleTime = require('./_test-helpers');
 
 chai.use(sinonChai);
 
