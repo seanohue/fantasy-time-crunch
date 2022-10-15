@@ -3,7 +3,7 @@ const chai = require('chai');
 const { expect } = chai;
 const sinon = require('sinon');
 const sinonChai = require('sinon-chai');
-const getExampleTime = require('./_test-helpers');
+const { getExampleTime } = require('./_test-helpers');
 
 chai.use(sinonChai);
 

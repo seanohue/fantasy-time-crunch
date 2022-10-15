@@ -2,6 +2,10 @@ const chai = require('chai');
 const { expect } = chai;
 const sinon = require('sinon');
 const sinonChai = require('sinon-chai');
+const {
+  ERROR_MESSAGE,
+  CONFIGURATION_ERROR_MESSAGE,
+} = require('./_test-helpers');
 
 chai.use(sinonChai);
 
@@ -27,6 +31,10 @@ const testCases = [
 ];
 
 describe('lib/utils.js', () => {
+  afterEach(() => {
+    sinon.restore();
+  });
+
   describe('[Function createIdList]', () => {
     describe('functionality:', () => {
       it('should return a string', () => {
@@ -48,7 +56,7 @@ describe('lib/utils.js', () => {
         expect(createIdList(testCases)).to.eq('');
       });
 
-      it('should filter non-number ids', () => {
+      it('should filter non-number or non-string ids', () => {
         const output = createIdList([
           { id: {} },
           { id: false },
@@ -57,7 +65,7 @@ describe('lib/utils.js', () => {
           { id: '2' },
           { id: 1 },
         ]);
-        expect(output).to.equal('1');
+        expect(output).to.equal('2, 1');
       });
 
       it('should create a string of ids, comma separated', () => {
@@ -78,8 +86,8 @@ describe('lib/utils.js', () => {
         const err = 'test';
         expect(() =>
           handleErrors('first', 'second', { errors: [err] })
-        ).to.throw('Invalid TimeSystem Configuration, see logs');
-        expect(stub).to.have.calledWith('Configuration Error: ', err);
+        ).to.throw(ERROR_MESSAGE);
+        expect(stub).to.have.calledWith(CONFIGURATION_ERROR_MESSAGE, err);
         stub.restore();
       });
 
@@ -147,9 +155,9 @@ describe('lib/utils.js', () => {
         const err = 'test';
 
         expect(() => handleConfigErrors({ errors: [err] })).to.throw(
-          'Invalid TimeSystem Configuration, see logs'
+          ERROR_MESSAGE
         );
-        expect(stub).to.have.calledWith('Configuration Error: ', err);
+        expect(stub).to.have.calledWith(CONFIGURATION_ERROR_MESSAGE, err);
 
         stub.restore();
       });
