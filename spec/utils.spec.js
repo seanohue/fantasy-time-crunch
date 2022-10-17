@@ -168,7 +168,7 @@ describe("lib/utils.js", () => {
         testCases
           .filter((testCase) => typeof testCase !== "function" && typeof testCase !== "object")
           .forEach((testCase) => {
-            expect(() => maybeCallWithContext(testCase, () => {})).to.throw("ctx is not a Constructor");
+            expect(() => maybeCallWithContext(testCase, () => {})).to.throw("ctx is not an object");
           });
       });
     });
