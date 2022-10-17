@@ -15,8 +15,8 @@ const getExampleTime = () => ({
   hour: {
     makes: { day: 24 },
     onIncrement() {
-      console.log("BING!");
-      console.log("Hour: ", this.time.hour);
+      console.log('BING!');
+      console.log('Hour: ', this.time.hour);
     },
     // Units can be divided into multiple state changes. For example, a day has two or more states defined
     // by how many hours have passed.
@@ -24,7 +24,7 @@ const getExampleTime = () => ({
     // In this case, dawn and dusk are different depending
     // on the season
     states() {
-      if (this.states.is("winter")) {
+      if (this.states.is('winter')) {
         return {
           day: 9, // 0900 -- by default this number represents hours. however, each property returned can also be a function that has access to any time unit.
           night: 20, // 2000
@@ -43,8 +43,8 @@ const getExampleTime = () => ({
       return { month: days };
     },
     onIncrement() {
-      const names = "MTWHFSU";
-      console.log("Day:", names[this.time.day]);
+      const names = 'MTWHFSU';
+      console.log('Day:', names[this.time.day]);
     },
   },
   month: {
@@ -63,4 +63,4 @@ const getExampleTime = () => ({
   },
 });
 
-module.exports = getExampleTime
+module.exports = getExampleTime;

@@ -4,6 +4,7 @@
   "description": "A way of handling time and time-related state changes in a highly customizable way, for use with games and virtual worlds",
   "main": "index.js",
   "scripts": {
+    "lint": "npx prettier . --write",
     "test": "nyc --reporter=html --reporter=text mocha spec",
     "test:watch": "mocha spec -w"
   },
