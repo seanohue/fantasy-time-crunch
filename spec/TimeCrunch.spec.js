@@ -146,16 +146,22 @@ describe('TimeCrunch Class', () => {
         expect(timeCrunch.increment(1, {}, 1)).to.be.ok;
       });
 
-      it("should call tick with the next unit when time is at max value", () => {
+      it('should call tick with the next unit when time is at max value', () => {
         const stub = sinon.stub(timeCrunch, 'tick');
-        expect(timeCrunch.increment('minute', { makes: { hour: 60 }, id: 'minute', next: 'hour', max: 60 }, 61));
-        expect(stub).to.have.been.calledWith('hour')
+        expect(
+          timeCrunch.increment(
+            'minute',
+            { makes: { hour: 60 }, id: 'minute', next: 'hour', max: 60 },
+            61
+          )
+        );
+        expect(stub).to.have.been.calledWith('hour');
         stub.restore();
-      })
+      });
 
       it('should return the same instance of TimeCrunch', () => {
-        expect(timeCrunch.increment(1, {}, 1)).to.eql(timeCrunch)
-      })
+        expect(timeCrunch.increment(1, {}, 1)).to.eql(timeCrunch);
+      });
     });
 
     describe('errors:', () => {
@@ -179,17 +185,23 @@ describe('TimeCrunch Class', () => {
         expect(timeCrunch.optimizedIncrement(null, {})).to.be.ok;
       });
 
-      it("should call tick with the next unit when time is at max value", () => {
-        
+      it('should call tick with the next unit when time is at max value', () => {
         const stub = sinon.stub(timeCrunch, 'tick');
-        expect(timeCrunch.optimizedIncrement('minute', { makes: { hour: 60 }, id: 'minute', next: 'hour', max: 0 }));
-        expect(stub).to.have.been.calledWith('hour')
+        expect(
+          timeCrunch.optimizedIncrement('minute', {
+            makes: { hour: 60 },
+            id: 'minute',
+            next: 'hour',
+            max: 0,
+          })
+        );
+        expect(stub).to.have.been.calledWith('hour');
         stub.restore();
-      })
+      });
 
       it('should return the same instance of TimeCrunch', () => {
-        expect(timeCrunch.optimizedIncrement(1, {})).to.eql(timeCrunch)
-      })
+        expect(timeCrunch.optimizedIncrement(1, {})).to.eql(timeCrunch);
+      });
     });
 
     describe('errors:', () => {
