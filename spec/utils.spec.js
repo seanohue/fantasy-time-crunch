@@ -210,7 +210,7 @@ describe('lib/utils.js', () => {
     describe('errors:', () => {
       it('should throw an error when no arg is passed', () => {
         expect(() => maybeCallWithContext()).to.throw(
-          'ctx is not a Constructor'
+          'ctx is not an object'
         );
       });
 
