@@ -222,7 +222,7 @@ describe('lib/utils.js', () => {
           )
           .forEach((testCase) => {
             expect(() => maybeCallWithContext(testCase, () => {})).to.throw(
-              'ctx is not a Constructor'
+              'ctx is not an object'
             );
           });
       });
