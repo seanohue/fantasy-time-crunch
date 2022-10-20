@@ -1,7 +1,7 @@
 const ERROR_MESSAGE = 'Invalid TimeSystem Configuration, see logs.';
 const CONFIGURATION_ERROR_MESSAGE = 'Configuration Error: ';
 
-const getExampleTime = () => ({
+const getExampleTime = (config) => ({
   // One and only one unit is the smallest measured subdivision of time, defined as a 'tick'
   second: {
     tick: true,
@@ -64,6 +64,7 @@ const getExampleTime = () => ({
       fall: 9,
     },
   },
+  ...config,
 });
 
 module.exports = { getExampleTime, ERROR_MESSAGE, CONFIGURATION_ERROR_MESSAGE };
