@@ -3,6 +3,10 @@ index.html
 README.md
 CODE_OF_CONDUCT.md
 CONTRIBUTING.md
+coverage
+.nyc_output
+.husky
+.github
 
 *.svg
 *.lock
