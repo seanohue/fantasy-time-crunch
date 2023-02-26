@@ -20,5 +20,5 @@ export declare const handleConfigErrors: (
 export declare function handleErrors<T extends string, K extends string>(
   label: string,
   message: string,
-  { system, input, errors }: ITimeCrunchValidation<T, K>
+  validation: ITimeCrunchValidation<T, K>
 ): ITimeCrunchValidation<T, K>;

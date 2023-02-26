@@ -81,7 +81,7 @@ declare class TimeCrunch<TimeUnitKeys extends string, States extends string> {
   time: { [K in TimeUnitKeys]: number };
   errors: string[];
 
-  constructor(def: ITimeCrunchConfig<TimeUnitKeys, States>) {}
+  constructor(def: ITimeCrunchConfig<TimeUnitKeys, States>);
 
   tick(id?: TimeUnitKeys, amount = 1): this;
 
@@ -94,7 +94,7 @@ declare class TimeCrunch<TimeUnitKeys extends string, States extends string> {
   optimizedIncrement(
     id: TimeUnitKeys,
     unit: ITimeCrunchTimeUnit<TimeUnitKeys, States>
-  ): this {}
+  ): this;
 
   getUnit(id: TimeUnitKeys): ITimeCrunchTimeUnitWithId<TimeUnitKeys, States>;
 
