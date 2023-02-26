@@ -1,4 +1,4 @@
-import { ITimeCrunchSeed, ITimeCrunchValidation } from "./TimeCrunch";
+import { ITimeCrunchSeed, ITimeCrunchValidation } from './TimeCrunch';
 
 export declare function validate<T extends string, K extends string>(
   args: ITimeCrunchSeed<T, K>

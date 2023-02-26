@@ -1,4 +1,4 @@
-import { ITimeCrunchTimeUnitWithId, ITimeCrunchValidation } from "./TimeCrunch";
+import { ITimeCrunchTimeUnitWithId, ITimeCrunchValidation } from './TimeCrunch';
 
 export declare const createIdList = <T extends string, States extends string>(
   args:

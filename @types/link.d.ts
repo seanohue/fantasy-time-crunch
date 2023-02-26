@@ -1,7 +1,7 @@
 import {
   ITimeCrunchValidation,
   ITimeCrunchValidationWithTime,
-} from "./TimeCrunch";
+} from './TimeCrunch';
 
 // Linking time units
 export declare const link = <T extends string, K extends string>(
