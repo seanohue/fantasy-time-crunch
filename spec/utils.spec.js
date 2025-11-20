@@ -209,9 +209,7 @@ describe('lib/utils.js', () => {
 
     describe('errors:', () => {
       it('should throw an error when no arg is passed', () => {
-        expect(() => maybeCallWithContext()).to.throw(
-          'ctx is not an object'
-        );
+        expect(() => maybeCallWithContext()).to.throw('ctx is not an object');
       });
 
       it('should throw an error if first arg is not an object', () => {
